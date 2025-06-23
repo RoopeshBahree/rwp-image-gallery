@@ -1,0 +1,108 @@
+/*!***************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/style.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************/
+@charset "UTF-8";
+/**
+ * RWP Image Gallery – Frontend Styles
+ * Loaded on the frontend only via `style` in block.json.
+ */
+/* Horizontal layout */
+.rwp-image-gallery {
+  /* Vertical layout */
+  /* Image styling */
+}
+.rwp-image-gallery .gallery-horizontal {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 10px;
+}
+.rwp-image-gallery .gallery-vertical {
+  display: inline-grid;
+  flex-direction: column;
+  gap: 10px;
+}
+.rwp-image-gallery img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.rwp-image-gallery img:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  transform: scale(1.02);
+}
+
+/* Gallery layout containers */
+.rwp-image-gallery .gallery-horizontal > div,
+.rwp-image-gallery .gallery-vertical > div {
+  width: auto;
+  aspect-ratio: 4/3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* Wrapper for inline-block layout */
+.gallery-wrapper {
+  position: relative;
+  display: inline-flex;
+}
+
+/* Modal background */
+.rwp-image-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+/* Hide modal when inactive */
+.rwp-image-modal[hidden] {
+  display: none !important;
+}
+
+/* Modal content box */
+.modal-content {
+  position: relative;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+/* Image inside modal */
+.modal-content img {
+  max-width: 100%;
+  max-height: 80vh;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+/* Close button OUTSIDE modal */
+.close-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  z-index: 1000;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

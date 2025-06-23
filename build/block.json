@@ -1,0 +1,63 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "create-block/rwp-image-gallery",
+  "version": "0.1.0",
+  "title": "Rwp Image Gallery",
+  "category": "widgets",
+  "description": "A custom Gutenberg block to display an image gallery with horizontal or vertical layout options.",
+  "example": {},
+  "attributes": {
+    "images": {
+      "type": "array",
+      "default": [],
+      "items": {
+        "type": "object"
+      }
+    },
+    "layout": {
+      "type": "string",
+      "default": "horizontal"
+    },
+    "imageWidth": {
+      "type": "string",
+      "default": "100"
+    },
+    "imageMargin": {
+      "type": "string",
+      "default": "5"
+    },
+    "imageLimit": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "supports": {
+    "interactivity": true,
+    "html": false,
+    "__experimentalBorder": {
+      "radius": true,
+      "color": true,
+      "width": true,
+      "style": true,
+      "__experimentalDefaultControls": {
+        "color": true,
+        "radius": true
+      }
+    },
+    "spacing": {
+      "margin": true,
+      "padding": true
+    },
+    "color": {
+      "background": true,
+      "text": true
+    },
+    "shadow": true
+  },
+  "textdomain": "rwp-image-gallery",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScriptModule": "file:./view.js"
+}

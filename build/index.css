@@ -1,0 +1,77 @@
+/*!****************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/editor.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************/
+@charset "UTF-8";
+/**
+ * RWP Image Gallery – Editor Styles
+ *
+ * These styles apply only inside the block editor.
+ */
+.rwp-image-gallery {
+  /* Horizontal layout */
+  /* Vertical layout */
+}
+.rwp-image-gallery .gallery-horizontal {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 10px;
+}
+.rwp-image-gallery .gallery-vertical {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.rwp-image-gallery .gallery-horizontal > div,
+.rwp-image-gallery .gallery-vertical > div {
+  width: auto;
+  aspect-ratio: 4/3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* Preview image style */
+.gallery-preview img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.edit-gallery-placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  border: 2px dashed #ccc;
+  background: #fafafa;
+}
+
+.gallery-wrapper {
+  position: relative;
+  display: inline-flex;
+}
+
+.edit-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+.gallery-wrapper:hover .edit-overlay {
+  opacity: 1;
+}
+
+/*# sourceMappingURL=index.css.map*/
