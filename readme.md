@@ -1,4 +1,4 @@
-# Explicit Media Block #
+# Rwp Image Gallery #
 **Contributors:** [RoopeshBahree](https://profiles.wordpress.org/roopeshbahree/)  
 **Tags:** block, media, blocks  
 **Requires at least:** 6.6  
