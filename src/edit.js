@@ -52,6 +52,10 @@ export default function Edit( { attributes, setAttributes } ) {
 								label: __( 'Vertical', 'rwp-image-gallery' ),
 								value: 'vertical',
 							},
+							{
+								label: __( 'Masonry', 'rwp-image-gallery' ),
+								value: 'masonry',
+							},
 						] }
 						onChange={ ( newLayout ) =>
 							setAttributes( { layout: newLayout } )
@@ -70,14 +74,14 @@ export default function Edit( { attributes, setAttributes } ) {
 						) }
 					/>
 					<TextControl
-						label={ __( 'Image Margin', 'rwp-image-gallery' ) }
+						label={ __( 'Image Gap', 'rwp-image-gallery' ) }
 						value={ imageMargin }
 						onChange={ ( value ) => {
 							const numeric = value.replace( /\D/g, '' );
 							setAttributes( { imageMargin: numeric } );
 						} }
 						help={ __(
-							'Margin in pixels (px will be added automatically)',
+							'Gap in pixels (px will be added automatically)',
 							'rwp-image-gallery'
 						) }
 					/>

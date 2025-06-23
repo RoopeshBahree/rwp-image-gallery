@@ -1,4 +1,5 @@
 import { store, getContext } from '@wordpress/interactivity';
+import Masonry from 'masonry-layout';
 
 const { state } = store( 'create-block/rwp-image-gallery', {
 	// Global (non-reactive) values can be added here (optional)
@@ -43,6 +44,18 @@ const { state } = store( 'create-block/rwp-image-gallery', {
 					).actions.closeModal();
 				}
 			} );
+		},
+
+		initMasonry: () => {
+			const gallery = document.querySelector( '.gallery-masonry' );
+			if ( gallery ) {
+				new Masonry( gallery, {
+					itemSelector: '.masonry-item',
+					columnWidth: '.masonry-item',
+					gutter: 10,
+					percentPosition: true,
+				} );
+			}
 		},
 	},
 } );

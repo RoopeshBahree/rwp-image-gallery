@@ -75,6 +75,9 @@ function Edit({
           }, {
             label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Vertical', 'rwp-image-gallery'),
             value: 'vertical'
+          }, {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Masonry', 'rwp-image-gallery'),
+            value: 'masonry'
           }],
           onChange: newLayout => setAttributes({
             layout: newLayout
@@ -90,7 +93,7 @@ function Edit({
           },
           help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Width in pixels (px will be added automatically)', 'rwp-image-gallery')
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Image Margin', 'rwp-image-gallery'),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Image Gap', 'rwp-image-gallery'),
           value: imageMargin,
           onChange: value => {
             const numeric = value.replace(/\D/g, '');
@@ -98,7 +101,7 @@ function Edit({
               imageMargin: numeric
             });
           },
-          help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Margin in pixels (px will be added automatically)', 'rwp-image-gallery')
+          help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Gap in pixels (px will be added automatically)', 'rwp-image-gallery')
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
           label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Image Count', 'rwp-image-gallery'),
           value: imageLimit,
@@ -289,7 +292,7 @@ function save({
     ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps.save(),
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
       "data-wp-interactive": "create-block/rwp-image-gallery",
-      "data-wp-watch": "callbacks.expSetupLightbox",
+      "data-wp-watch": "callbacks.expSetupLightbox, callbacks.initMasonry",
       children: [images.length > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
         className: "gallery-wrapper",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
@@ -303,6 +306,7 @@ function save({
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
                 src: img.url,
                 alt: img.alt || '',
+                className: layout === 'masonry' ? 'masonry-item' : '',
                 "data-wp-on--click": "actions.openModal",
                 style: {
                   width: imageWidth ? `${imageWidth}px` : undefined,

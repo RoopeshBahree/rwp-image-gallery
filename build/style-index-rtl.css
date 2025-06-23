@@ -6,10 +6,21 @@
  * RWP Image Gallery – Frontend Styles
  * Loaded on the frontend only via `style` in block.json.
  */
+/* Image inside modal */
+img {
+  max-width: 100%;
+  max-height: 80vh;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
 /* Horizontal layout */
 .rwp-image-gallery {
   /* Vertical layout */
+  /* Masonry layout */
   /* Image styling */
+  padding: 0 10px;
+  margin: 0;
 }
 .rwp-image-gallery .gallery-horizontal {
   display: flex;
@@ -18,23 +29,49 @@
   gap: 10px;
 }
 .rwp-image-gallery .gallery-vertical {
-  display: inline-grid;
-  flex-direction: column;
+  display: grid;
+  grid-auto-rows: auto;
   gap: 10px;
+  justify-items: start;
+  width: 100%;
+  box-sizing: border-box;
+}
+.rwp-image-gallery .gallery-masonry {
+  -moz-column-count: 5;
+       column-count: 5;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  width: 100%;
+}
+@media (max-width: 600px) {
+  .rwp-image-gallery .gallery-masonry {
+    -moz-column-count: 2;
+         column-count: 2;
+  }
 }
 .rwp-image-gallery img {
   width: 100%;
-  height: 100%;
+  height: auto;
   -o-object-fit: cover;
      object-fit: cover;
   display: block;
   border-radius: 4px;
   cursor: pointer;
   transition: box-shadow 0.3s ease, transform 0.3s ease;
+  margin-bottom: 10px;
+  -moz-column-break-inside: avoid;
+       break-inside: avoid;
 }
 .rwp-image-gallery img:hover {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
   transform: scale(1.02);
+}
+
+.masonry-item {
+  -moz-column-break-inside: avoid;
+       break-inside: avoid;
+  margin-bottom: 10px;
+  width: 100%;
 }
 
 /* Gallery layout containers */
@@ -52,7 +89,13 @@
 /* Wrapper for inline-block layout */
 .gallery-wrapper {
   position: relative;
-  display: inline-flex;
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+  text-align: right;
+  justify-content: flex-start;
 }
 
 /* Modal background */
@@ -82,14 +125,6 @@
   border-radius: 8px;
   max-width: 90%;
   max-height: 90%;
-}
-
-/* Image inside modal */
-.modal-content img {
-  max-width: 100%;
-  max-height: 80vh;
-  -o-object-fit: contain;
-     object-fit: contain;
 }
 
 /* Close button OUTSIDE modal */

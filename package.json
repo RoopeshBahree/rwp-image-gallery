@@ -18,6 +18,7 @@
 		"@wordpress/scripts": "^30.18.0"
 	},
 	"dependencies": {
-		"@wordpress/interactivity": "^6.25.0"
+		"@wordpress/interactivity": "^6.25.0",
+		"masonry-layout": "^4.2.2"
 	}
 }

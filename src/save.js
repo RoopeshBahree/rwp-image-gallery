@@ -7,7 +7,7 @@ export default function save( { attributes } ) {
 		<div { ...useBlockProps.save() }>
 			<div
 				data-wp-interactive="create-block/rwp-image-gallery"
-				data-wp-watch="callbacks.expSetupLightbox"
+				data-wp-watch="callbacks.expSetupLightbox, callbacks.initMasonry"
 			>
 				{ images.length > 0 && (
 					<div className="gallery-wrapper">
@@ -23,6 +23,11 @@ export default function save( { attributes } ) {
 										<img
 											src={ img.url }
 											alt={ img.alt || '' }
+											className={
+												layout === 'masonry'
+													? 'masonry-item'
+													: ''
+											}
 											data-wp-on--click="actions.openModal"
 											style={ {
 												width: imageWidth
@@ -45,9 +50,9 @@ export default function save( { attributes } ) {
 					className="rwp-image-modal"
 				>
 					<button
-							data-wp-on--click="actions.closeModal"
-							className="close-button"
-						>
+						data-wp-on--click="actions.closeModal"
+						className="close-button"
+					>
 						×
 					</button>
 					<div className="modal-content">

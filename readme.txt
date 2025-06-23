@@ -8,7 +8,7 @@ License:           GPL-2.0-or-later
 Requires PHP:      7.4
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
-Add a block to display an image gallery with horizontal or vertical layout options to your site with this WordPress block.
+Add a block to display an image gallery with horizontal, vertical or masonry layout options to your site with this WordPress block.
 
 == Description ==
 

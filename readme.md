@@ -8,11 +8,11 @@
 **License:** GPLv2 or later  
 **License URI:** https://www.gnu.org/licenses/gpl-2.0.html  
 
-Add a block to display an image gallery with horizontal or vertical layout options to your site with this WordPress block.
+Add a block to display an image gallery with horizohorizontal, vertical or masonry layout options to your site with this WordPress block.
 
 ## Description ##
 
-A WordPress block to display an image gallery with horizontal or vertical layout options, turning your site into an interactive content hub.
+A WordPress block to display an image gallery with horizontal, vertical or masonry layout options, turning your site into an interactive content hub.
 
 ## Installation ##
 

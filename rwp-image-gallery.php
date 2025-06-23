@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:       Rwp Image Gallery
- * Description:       A custom Gutenberg block to display an image gallery with horizontal or vertical layout options.
+ * Description:       A custom Gutenberg block to display an image gallery with horizontal, vertical or masonry layout options.
  * Version:           0.1.0
  * Requires at least: 6.7
  * Requires PHP:      7.4
